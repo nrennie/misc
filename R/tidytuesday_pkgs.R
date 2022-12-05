@@ -2,12 +2,11 @@ library(tidyverse)
 library(NCmisc)
 library(ggwordcloud)
 
-setwd("G:/My Drive/GitHub/tidytuesday")
 rscripts2021 = list.files("2021/", pattern = ".R$", recursive = TRUE)
 
 # function to extract functions
 get_functions <- function(file){
-  file1 = glue::glue("G:\\My Drive\\GitHub\\tidytuesday\\2021\\{file}")
+  file1 = glue::glue("here::here()/2021/{file}")
   functions = list.functions.in.file(file1)
   functions = unname(unlist(functions))
   return(functions)
