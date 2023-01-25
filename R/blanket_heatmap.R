@@ -1,5 +1,4 @@
 library(tidyverse)
-library(PrettyCols)
 
 # Data from HADCET
 # See 2022 30DayChartChallenge data
@@ -28,11 +27,11 @@ plot_data <- df |>
 ggplot() +
   geom_tile(data = plot_data,
             mapping = aes(month, decade, fill = temp_cut),
-            colour = "#a5a3a4",
+            colour = "#bbbbbd",
             linewidth = 1.5) +
   scale_y_discrete(limits=rev) +
-  scale_fill_manual(values = c("#2e586b", "#91c2be", "#dbd4cb", "#bb3264", "#6c1125"),
-                    labels = c("1708\nPetrol\n", "1842\nSpear-\nmint", "1807\nHint of\nSilver", "1827\nFuschia\nPurple", "1123\nClaret\n")) +
+  scale_fill_manual(values = c("#358681", "#7fa69f", "#c8d8d7", "#b83b60", "#974b73"),
+                    labels = c("1062\nTeal\n", "1725\nSage\n", "1820\nDuck\negg", "1023\nRasp-\nberry", "1061\nPlum\n")) +
   guides(fill = guide_legend(label.position = "bottom",
                              title.position = "top",
                              title = "Temperature")) +
