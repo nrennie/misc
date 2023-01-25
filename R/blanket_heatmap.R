@@ -38,7 +38,7 @@ ggplot() +
   labs(x = "",
        y = "",
        title = "HADCET Temperature Blanket Pattern",
-       subtitle = "Wool: Stylecraft Special DK 100g\nBorder: 1203 Silver") +
+       subtitle = "Wool: Stylecraft Special Aran 100g\nBorder: 1203 Silver") +
   coord_fixed() +
   theme_minimal() +
   theme(legend.position = "top",
