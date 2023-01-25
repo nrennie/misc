@@ -19,16 +19,18 @@ g <- ggplot() +
   geom_sf(data = kontur, 
           aes(fill = population,
               colour = population)) +
-  scale_fill_scico(direction = -1, trans = "pseudo_log", palette = "lajolla") +
-  scale_color_scico(direction = -1, trans = "pseudo_log", palette = "lajolla") +
-  labs(title = "Scotland") +
+  scale_fill_scico(direction = 1, trans = "pseudo_log", palette = "lajolla") +
+  scale_color_scico(direction = 1, trans = "pseudo_log", palette = "lajolla") +
+  labs(title = "United Kingdom") +
   theme_void() +
   theme(legend.position = "none",
-        plot.title = element_text(colour = "#0B0B45", family = "Hill House", size = 60, hjust = 0.5),
-        plot.margin = margin(10, 10, 10, 10),
-        plot.background = element_rect(fill = "#fafafa", colour = "#fafafa"),
-        panel.background = element_rect(fill = "#fafafa", colour = "#fafafa")) 
+        plot.title = element_text(colour = "#0B0B45", family = "Hill House", size = 34, hjust = 0.5),
+        plot.margin = margin(10, 10, 10, 10), 
+        plot.background = element_rect(fill = "white", colour = "white"),
+        panel.background = element_rect(fill = "white", colour = "white")) 
 
 # make 3d
 rayshader::plot_gg(g,
+                   height_aes = "fill",
                    preview = TRUE)
+rayshader::render_snapshot("uk.png", clear = TRUE)
